@@ -16,7 +16,9 @@ export default {
   },
   methods: {
     openDialog: function () {
+      console.log('tt')
       let dialog = this.$root.$refs.hDialog
+      console.log(this.$root)
       let vDialog = dialog.open({
         template: '<div>第一个组件<test></test></div>',
         components: {

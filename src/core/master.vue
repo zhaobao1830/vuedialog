@@ -1,5 +1,5 @@
 <template>
-    <div> 
+    <div>
         <div class="modal-content"  v-for="(comp,index) in comps" v-bind:style="style(index,comp)" >
           <div class="modal-header" >
             header
@@ -10,7 +10,7 @@
           <div class="modal-footer">
             <button type="button" class="btn btn-default" v-on:click="clickHandler(btn.value, comp, index)" v-for="btn in btns" >{{btn.text}}</button>
           </div>
-        </div> 
+        </div>
       <hDialogBack ref="back" v-bind:z-index="realIndex-1" ></hDialogBack>
     </div>
 </template>
@@ -78,6 +78,8 @@ export default {
       comp.resolve({'type': type, 'close': close})
     },
     style: function (index, comp) {
+      console.log(index)
+      console.log(comp)
       let point = getclientPoint()
       return {
         zIndex: this.realIndex + index,
